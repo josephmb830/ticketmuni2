@@ -1,9 +1,11 @@
 <?php
 session_start();
-header('Content-Type: text/html; charset=UTF-8');  
-
 include './class_mysql.php';
 include './config.php';
+header('Content-Type: text/html; charset=UTF-8');  
+
+?>  
+<?php 
 
 if(isset($_POST['dni_contacto']) && isset($_POST['asunto']) && isset($_POST['descripcion'])){
   $dni_contacto=MysqlQuery::RequestPost('dni_contacto');
@@ -45,7 +47,8 @@ if(isset($_POST['dni_contacto']) && isset($_POST['asunto']) && isset($_POST['des
   }
 }
 
-
+?>
+<?php
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   // Procesar otros campos del formulario
@@ -102,16 +105,14 @@ if ($resultado) {
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 
-  <?php 
-  include "./links.php"; 
-  ?>
+  <?php include "./links.php"; ?>
 
 </head> 
 
 <body>
 
 
-<?php ?>
+<?php include "./slidebar.php"; ?>    
 
       <div class="col-md-12 border-login p-2 sombra w-50 mx-auto  ">
           <form action="" method="POST" style="margin: 20px;" enctype="multipart/form-data">
@@ -203,3 +204,12 @@ if ($resultado) {
       </div>
 
       <?php  ?>
+
+      </body>
+      </html>
+        <script>
+          
+        </script>
+        <?php 
+        
+      ?>
