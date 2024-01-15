@@ -79,7 +79,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 $rutasString = implode(',', $rutasGuardadasEnBD);
 
 // Consulta SQL para actualizar la columna archivos_ruta en la tabla cliente
-$sqlUpdate = "UPDATE ticket.cliente SET archivos_ruta = '$rutasString' WHERE id_cliente = 123;"; // ajusta el id_cliente según tu caso
+$sqlUpdate = "UPDATE ticket4.cliente SET archivos = '$rutasString' WHERE id_cliente = 123;"; // ajusta el id_cliente según tu caso
 
 // Ejecutar la consulta SQL
 $resultado = mysqli_query($conexion, $sqlUpdate);
@@ -94,6 +94,7 @@ if ($resultado) {
 }
 
 ?>
+
 <!DOCTYPE html>
 <html>
 
@@ -134,7 +135,7 @@ if ($resultado) {
               </div>
               <div class="form-group col-md-3">
                 <label><span class=""></span>Nombres</label>
-                <input type="text" class="form-control" name="nombres_contacto" placeholder="Escribe tu nombre" required="" />
+                <input type="text" class="form-control" name="nombres_contacto" placeholder="Escribe tus nombres" required="" />
               </div>
               <div class="form-group col-md-3">
                 <label><span class=""></span>Apellido Paterno</label>
